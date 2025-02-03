@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 import aiohttp
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 API_URL = "https://jsonplaceholder.typicode.com/posts/1"
 
