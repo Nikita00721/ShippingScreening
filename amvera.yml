@@ -1,11 +1,23 @@
-meta:
-  environment: python
-  toolchain:
-    name: pip
-    version: "3.11"
-build:
-  requirementsPath: requirements.txt
-run:
-  scriptName: server.py
-  persistenceMount: /data
-  containerPort: "80"
+version: "1.0"
+
+runtime: python3.9
+
+entrypoint: python server.py
+
+requirements: requirements.txt
+
+ports:
+  - 8000
+
+env:
+  - name: DEBUG
+    value: "True"
+
+  - name: TELEGRAM_BOT_TOKEN
+    value: "7892759186:AAF1j-Gsi4hJY8LxrI9RgTWeumj1YeDQNfk"
+
+volumes:
+  - /data
+
+domains:
+  - amvera-nkremnev3003-run-shipping.amvera.io
