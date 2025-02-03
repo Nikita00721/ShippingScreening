@@ -20,4 +20,4 @@ volumes:
   - /data
 
 domains:
-  - amvera-nkremnev3003-run-shipping.amvera.io
+  - shipping-nkremnev3003.amvera.io

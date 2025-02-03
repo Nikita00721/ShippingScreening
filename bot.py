@@ -11,7 +11,7 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def send_welcome(message: types.Message):
-    web_app = WebAppInfo(url="https://amvera-nkremnev3003-run-shipping.io")
+    web_app = WebAppInfo(url="https://shipping-nkremnev3003.amvera.io")
     button = KeyboardButton(text="Открыть Mini App", web_app=web_app)
 
     keyboard = ReplyKeyboardMarkup(
