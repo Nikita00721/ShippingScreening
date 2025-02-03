@@ -1,8 +1,9 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 import aiohttp
+import os
 
 app = FastAPI()
 
@@ -16,6 +17,10 @@ async def get_data():
         async with session.get(API_URL) as response:
             data = await response.json()
             return JSONResponse(content=data)
+
+@app.get("/")
+async def serve_index():
+    return FileResponse("static/index.html")
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
