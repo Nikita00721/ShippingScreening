@@ -11,7 +11,7 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def send_welcome(message: types.Message):
-    web_app = WebAppInfo(url="https://127.0.0.1:8000")
+    web_app = WebAppInfo(url="https://miniapp-liard.vercel.app/")  # Укажите URL вашего React-приложения
     button = KeyboardButton(text="Открыть Mini App", web_app=web_app)
 
     keyboard = ReplyKeyboardMarkup(
@@ -28,5 +28,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-#залупыш зхуй
